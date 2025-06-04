@@ -1,0 +1,25 @@
+[build]
+    command = "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps && npm run build"
+    publish = "dist"
+
+[context.common.environment]
+    VITE_APP_API_BASE_URL = "https://dev1-gateway.mallcomm.co.uk"
+    VITE_APP_API_VERSION = "v1.0"
+    VITE_APP_AUTH_BASE_URL = "https://dev9-auth.mallcomm.co.uk"
+    VITE_APP_URL = "http://localhost:5173"
+    VITE_TOKEN_EXPIRY_BUFFER_MINUTES = "1"
+    VITE_APP_CLIENT_ID = "23"
+
+    VITE_USE_MOCKS = "false"
+    VITE_AUTO_TENANCY_SELECTION = "false"
+
+
+[context.deploy-preview.environment]
+    VITE_USE_MOCKS = "true"
+    VITE_TOKEN_EXPIRY_BUFFER_MINUTES="1"
+    VITE_AUTO_TENANCY_SELECTION="false"
+
+[context.production.environment]
+    VITE_USE_MOCKS = "false"
+    VITE_TOKEN_EXPIRY_BUFFER_MINUTES="1"
+    VITE_AUTO_TENANCY_SELECTION="false"

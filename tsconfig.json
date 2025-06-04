@@ -1,0 +1,36 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": [
+      "vite/client"
+    ],
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@tiptap/*": [
+        "node_modules/@tiptap/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+  }
+}
